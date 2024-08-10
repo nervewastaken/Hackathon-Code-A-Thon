@@ -1,0 +1,83 @@
+/* Global Styles */
+body {
+    margin: 0;
+    font-family: Helvetica, Arial, sans-serif;
+    background-color: #f4f4f9;
+}
+
+/* Form Container */
+.inspection-form {
+    width: 50vw; /* Set the width to half of the viewport width */
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 1.5rem;
+    box-sizing: border-box;
+    background-color: #ffffff;
+    border-radius: 8px;
+    overflow-y: auto; /* Add scroll if content exceeds height */
+}
+
+/* Form Header */
+.form-header {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: #333333;
+    position: relative; /* For the underline effect */
+}
+
+/* Underline Effect for Header */
+.form-header::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 3px;
+    background-color: #ffe54c; /* Yellow underline */
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+}
+
+/* Label Styling */
+label {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 0.5rem;
+    font-weight: 700; /* Make labels bold */
+    color: #333333;
+}
+
+/* Input Fields */
+input {
+    font-size: 0.875rem;
+    padding: 0.5rem;
+    border-radius: 6px;
+    border: 1px solid #e0e0e0;
+    background-color: #f9f9f9;
+    margin-top: 0.25rem;
+    width: calc(100% - 1rem); /* Make input fields full width of the form minus padding */
+}
+
+/* Submit Button */
+button.button-52 {
+    font-size: 0.875rem;
+    font-weight: 600;
+    letter-spacing: 0.8px;
+    padding: 0.5rem 0; /* Vertical padding */
+    border: none;
+    cursor: pointer;
+    position: relative;
+    background-color: #ffe54c; /* Yellow button */
+    color: #000000;
+    border-radius: 6px;
+    transition: background-color 0.3s, transform 0.2s;
+    align-self: center; /* Center the button */
+    width: calc(100% - 1rem); /* Match the width of text fields */
+    margin-top: 1rem;
+}
+
+button.button-52:hover {
+    background-color: #e0c13d;
+    transform: scale(1.05);
+}
