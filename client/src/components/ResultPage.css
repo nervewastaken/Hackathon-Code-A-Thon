@@ -1,0 +1,89 @@
+/* resultsPage.css */
+
+/* General styling for the result page */
+.result-page {
+    padding: 2rem;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin: 0; /* Remove margins to ensure table stretches edge to edge */
+    box-sizing: border-box;
+  }
+  
+  /* Flex container for sections */
+  .section-container {
+    display: flex;
+    flex-wrap: wrap; /* Allows wrapping of items if needed */
+    gap: 1rem; /* Gap between the sections */
+    margin-bottom: 2rem; /* Space below each row of sections */
+  }
+  
+  /* Each section styling */
+  .section {
+    flex: 1;
+    min-width: 300px; /* Ensures that each section is at least 300px wide */
+    border-radius: 8px; /* Rounded corners for the section container */
+    background-color: #f9f9f9;
+    padding: 1rem;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Table styling */
+  .result-table {
+    width: 100%;
+    border-collapse: collapse;
+    border-radius: 8px; /* Rounded corners for the table */
+    border: 2px solid #ffe54c; /* Yellow border for the table */
+    overflow: hidden; /* Ensures corners are rounded properly */
+  }
+  
+  .result-table th, .result-table td {
+    padding: 0.75rem;
+    border: 1px solid #ccc;
+    text-align: left;
+    vertical-align: top; /* Aligns content at the top */
+  }
+  
+  .result-table th {
+    background-color: #ffe54c; /* Yellow background for headers */
+    color: #333; /* Dark text for contrast */
+    font-weight: bold;
+  }
+  
+  .result-table td {
+    background-color: #f9f9f9; /* Light gray background for table cells */
+  }
+  
+  .result-table input {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #ccc; /* Border for input fields */
+    border-radius: 4px;
+    box-shadow: none;
+    box-sizing: border-box; /* Ensures padding does not cause overflow */
+  }
+  
+  /* Ensure that the input fields do not overflow the table cells */
+  .result-table td input {
+    width: calc(100% - 1rem); /* Adjust width to account for padding */
+    box-sizing: border-box;
+  }
+/* Button styling */
+.button-container {
+    margin-bottom: 20px;
+  }
+  
+  .button-container button {
+    margin-right: 10px;
+    padding: 10px 20px;
+    border: none;
+    background-color: #ffe54c;
+    color: #333;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
+  .button-container button:hover {
+    background-color: #ffcc00;
+  }
+  
