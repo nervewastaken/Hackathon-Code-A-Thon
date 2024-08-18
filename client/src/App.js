@@ -8,6 +8,7 @@ import img1 from "./img1.jpg"; // Correct import for the image
 
 function App() {
   const [loading, setLoading] = useState(true);
+  const [selectedFile, setSelectedFile] = useState(null);
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -17,31 +18,40 @@ function App() {
     return () => clearTimeout(timer);
   }, []);
 
+  const handleFileChange = (event) => {
+    setSelectedFile(event.target.files[0]);
+  };
+
+  const uploadFile = () => {
+    if (!selectedFile) {
+      alert("Please select a file first.");
+      return;
+    }
+
+    const formData = new FormData();
+    formData.append("file", selectedFile);
+
+    fetch("http://127.0.0.1:4000/upload", {
+      method: "POST",
+      body: formData,
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        console.log("Success:", data);
+        alert("File uploaded successfully!");
+        console.log(data); // Log the response data here
+      })
+      .catch((error) => {
+        console.error("Error:", error);
+        alert("Failed to upload file.");
+      });
+  };
+
   return (
     <Router>
-      <div className="App">
-        {loading ? (
-          <div className="loading-screen">
-            <img src={catLogo} alt="CAT Logo" className="cat-logo" />
-          </div>
-        ) : (
-          <Routes>
-            <Route
-              path="/"
-              element={
-                <div className="main-container">
-                  <div className="image-container">
-                    <img src={img1} alt="Inspection" className="side-image" />
-                  </div>
-                  <div className="form-container">
-                    <Form />
-                  </div>
-                </div>
-              }
-            />
-            <Route path="/result" element={<ResultPage />} />
-          </Routes>
-        )}
+      <div>
+        <input type="file" onChange={handleFileChange} accept=".wav" />
+        <button onClick={uploadFile}>Upload</button>
       </div>
     </Router>
   );
